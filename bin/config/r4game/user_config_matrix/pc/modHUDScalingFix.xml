@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<UserConfig>
+    <Group id="modHUDScalingFix" displayName="Mods.modHUDScalingFix">
+        <PresetsArray>
+            <Preset id="0" displayName="mod_preset_vanilla">
+                <Entry varId="uiVerticalFrameScale" value="1.000000"/>
+                <Entry varId="uiHorizontalFrameScale" value="1.000000"/>
+            </Preset>
+            <Preset id="1" displayName="mod_preset_16_10">
+                <Entry varId="uiVerticalFrameScale" value="1.111111"/>
+                <Entry varId="uiHorizontalFrameScale" value="1.000000"/>
+            </Preset>
+            <Preset id="2" displayName="mod_preset_21_9">
+                <Entry varId="uiVerticalFrameScale" value="1.000000"/>
+                <Entry varId="uiHorizontalFrameScale" value="1.343750"/>
+            </Preset>
+            <Preset id="3" displayName="mod_preset_32_9">
+                <Entry varId="uiVerticalFrameScale" value="1.000000"/>
+                <Entry varId="uiHorizontalFrameScale" value="2.000000"/>
+            </Preset>
+            <Preset id="4" displayName="mod_preset_4_3">
+                <Entry varId="uiVerticalFrameScale" value="1.333333"/>
+                <Entry varId="uiHorizontalFrameScale" value="1.000000"/>
+            </Preset>
+            <Preset id="5" displayName="mod_preset_5_3">
+                <Entry varId="uiVerticalFrameScale" value="1.066667"/>
+                <Entry varId="uiHorizontalFrameScale" value="1.000000"/>
+            </Preset>
+            <Preset id="6" displayName="mod_preset_5_4">
+                <Entry varId="uiVerticalFrameScale" value="1.422222"/>
+                <Entry varId="uiHorizontalFrameScale" value="1.000000"/>
+            </Preset>
+        </PresetsArray>
+        <VisibleVars>
+            <Var id="Separator" displayName="" displayType="SUBTLE_SEPARATOR"/>
+            <Var id="uiVerticalFrameScale" displayName="mod_vertical_frame_scale" displayType="SLIDER;1.00;2.25;125" tags="buffered;customPresetIfChanged" overrideGroup="Hidden"/>
+            <Var id="uiHorizontalFrameScale" displayName="mod_horizontal_frame_scale" displayType="SLIDER;1.00;2.25;125" tags="buffered;customPresetIfChanged" overrideGroup="Hidden"/>
+        </VisibleVars>
+    </Group>
+</UserConfig>
