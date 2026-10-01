@@ -23,27 +23,37 @@ needs a horizontal scale of 1.3333.
 
 ## How it works
 
-The mod started as a single config file and now also ships a few scripts.
-
 Six HUD modules (buffs, item info, controls feedback, console and both horse
 bars) placed themselves with hardcoded offsets that only lined up at a scale of
-1. Those overrides are removed, so they follow the same scaling as the rest of
+1. The mod drops those offsets, so they follow the same scaling as the rest of
 the HUD. At a scale of 1 their position is unchanged.
 
-The options menu now applies a preset or slider change as soon as you leave the
-page, instead of needing a second trip through the menu.
+A preset or slider change applies as soon as you leave the settings page,
+instead of needing a second trip through the menu.
 
 Using the game's own Rescale HUD screen still resets both values to 1, so pick
 your preset again afterwards.
 
+## Versions
+
+There is a folder for each version of the game, each holding the `bin` and
+`Mods` folders that go into the game directory.
+
+`Remastered` is for game version 5.0 and later. All of it lives in one new
+script built on the game's script annotations, so it doesn't replace any vanilla
+scripts and never needs Script Merger, including alongside Adjustable FOV.
+
+`Next-Gen` is for 4.04. It ships full copies of ingameMenu.ws and six hudModule
+scripts with the changes inserted.
+
 ## Installing
 
-Copy the contents into your Witcher 3 folder, then add modHUDScalingFix.xml to
-dx12filelist.txt (or dx11filelist.txt). Menu Filelist Updater will do that part
-for you.
+Copy the contents of the folder for your game version into your Witcher 3
+folder.
 
-The scripts change ingameMenu.ws and six hudModule files, so run Script Merger
-if another mod edits any of them. Adjustable FOV also changes ingameMenu.ws and
-the two merge cleanly.
+On Next-Gen, also add modHUDScalingFix.xml to dx12filelist.txt (or
+dx11filelist.txt), or let Menu Filelist Updater do it. Run Script Merger if
+another mod edits the same scripts. Adjustable FOV also changes ingameMenu.ws
+and the two merge cleanly.
 
 MIT licensed.
