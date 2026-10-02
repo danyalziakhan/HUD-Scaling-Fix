@@ -30,6 +30,57 @@
 	super.UpdatePosition( anchorX, anchorY );
 }
 
+// text modules have no anchor, so scale the text position like one
+@addMethod( CR4HudModuleBase ) public function ModHUDScalingFixPlaceText( textName : string )
+{
+	var root : CScriptedFlashSprite;
+	var text : CScriptedFlashObject;
+	var y : float;
+
+	root = GetModuleFlash();
+	if( !root )
+		return;
+
+	text = root.GetMemberFlashObject( textName );
+	if( !text )
+		return;
+
+	y = ( text.GetMemberFlashNumber( "y" ) - 540 ) * ( theGame.GetUIVerticalFrameScale() - 1 );
+	if( AbsF( root.GetY() - y ) > 0.01 )
+		root.SetY( y );
+}
+
+@wrapMethod( CR4HudModuleSubtitles ) function UpdateScale( scale : float, flashModule : CScriptedFlashSprite ) : bool
+{
+	var result : bool;
+
+	result = wrappedMethod( scale, flashModule );
+	ModHUDScalingFixPlaceText( "tfSubtitles" );
+
+	return result;
+}
+
+@wrapMethod( CR4HudModuleSubtitles ) function OnSubtitleAdded( id : int, speakerNameDisplayText : string, htmlString : string, alternativeUI : bool )
+{
+	var result : bool;
+
+	result = wrappedMethod( id, speakerNameDisplayText, htmlString, alternativeUI );
+	ModHUDScalingFixPlaceText( "tfSubtitles" );
+
+	return result;
+}
+
+// flash moves the scene subtitles when a cutscene starts or ends
+@wrapMethod( CR4HudModuleDialog ) function OnTick( timeDelta : float )
+{
+	var result : bool;
+
+	result = wrappedMethod( timeDelta );
+	ModHUDScalingFixPlaceText( "mcSubtitlesContainer" );
+
+	return result;
+}
+
 // a pending slider value wins over the saved one
 @addMethod( CR4IngameMenu ) public function ModHUDScalingFixApply()
 {

@@ -28,6 +28,11 @@ bars) placed themselves with hardcoded offsets that only lined up at a scale of
 1. The mod drops those offsets, so they follow the same scaling as the rest of
 the HUD. At a scale of 1 their position is unchanged.
 
+Subtitles, dialogue lines and dialogue choices have no anchor at all, so the
+frame scale never moved them. On Remastered the mod now moves them the same way,
+using the subtitle line as their anchor, so they follow the rest of the HUD on
+every preset.
+
 A preset or slider change applies as soon as you leave the settings page,
 instead of needing a second trip through the menu.
 
